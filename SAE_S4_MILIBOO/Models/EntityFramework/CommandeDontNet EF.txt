@@ -1,0 +1,50 @@
+﻿//Installer Dotnet EF:
+
+dotnet tool install --global dotnet-ef --version 6.0.14
+
+//Créer la base de données: 
+
+dotnet-ef migrations add CreationDBMiliboo --project SAE_S4_MILIBOO
+dotnet-ef migrations add CreationDBMilibooDimension --project SAE_S4_MILIBOO
+
+dotnet-ef database update --project SAE_S4_MILIBOO
+
+//Update pour voir la base de données sur pgAdmin :
+
+dotnet-ef database update --project SAE_S4_MILIBOO
+
+//Copier coller pour supprimer :
+
+dotnet ef database update 0 --project SAE_S4_MILIBOO 
+dotnet ef migrations remove --project SAE_S4_MILIBOO 
+dotnet ef migrations remove --project SAE_S4_MILIBOO
+
+
+//Voir le script de la base :
+
+dotnet-ef migrations script --project SAE_S4_MILIBOO
+ 
+//Code à copier dans la deuxième migration : 
+
+protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.Sql("CREATE TYPE tdimensions AS ( x integer, y integer, z integer)");
+
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd ADD prd_dim_totale tdimensions NULL");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd ADD prd_dim_dossier tdimensions NULL");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd ADD prd_dim_assise tdimensions NULL");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd ADD prd_dim_colis tdimensions NULL");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd ADD prd_dim_deplie tdimensions NULL");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd ADD prd_dim_accoudoir tdimensions NULL");
+        }
+
+protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd DROP COLUMN prd_dim_totale");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd DROP COLUMN prd_dim_dossier");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd DROP COLUMN prd_dim_assise");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd DROP COLUMN prd_dim_colis");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd DROP COLUMN prd_dim_deplie");
+            migrationBuilder.Sql("ALTER TABLE t_e_produit_prd DROP COLUMN prd_dim_accoudoir");
+        }
+ 
