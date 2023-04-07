@@ -1,0 +1,17 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SAE_S4_MILIBOO
+build_property.RootNamespace = SAE_S4_MILIBOO
+build_property.ProjectDir = H:\COURS DEUXIEME ANNEE\S4\SAE\API_SAE_Miliboo-main\API_SAE_Miliboo-main\SAE_S4_MILIBOO\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = H:\COURS DEUXIEME ANNEE\S4\SAE\API_SAE_Miliboo-main\API_SAE_Miliboo-main\SAE_S4_MILIBOO
+build_property._RazorSourceGeneratorDebug = 
